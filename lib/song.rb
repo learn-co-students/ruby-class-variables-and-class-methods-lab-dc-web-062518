@@ -26,23 +26,35 @@ attr_accessor :name, :artist, :genre
     end
   end
 
-  def count
+  def self.count
     @@count
   end
 
-  def genre_count
+  def self.genre_count
     @@genre_count
   end
 
-  def genres
-    @@genres
+  def self.genres
+    new_array = []
+    @@genres.each do |element|
+      if new_array.include?(element) == false
+        new_array << element
+      end
+    end
+    new_array
   end
 
-  def artist_count
+  def self.artist_count
     @@artist_count
   end
 
-  def artists
-    @@artists
+  def self.artists
+    new_array = []
+    @@artists.each do |element|
+      if new_array.include?(element) == false
+        new_array << element
+      end
+    end
+    new_array
   end
 end
